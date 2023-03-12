@@ -1,7 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+
+const url = 'https://ephemeral-tapioca-4abd88.netlify.app/nytreats.json/'
+
+
+
+
+  
+  
+
 
 function App() {
+  const [rehab,setRehab] = React.useState('');  
+
+  fetch(url)
+.then((response) => response.json())
+.then((data) => 
+    this.setState({
+      setRehab: data.results
+}  ) 
+   ) 
+ 
   return (
     <div className="App">
       <header className="App-header">
@@ -15,7 +35,11 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          
+            { setRehab.map((rehab) => (
+               <h1>{setRehab.PROVIDER_CITY}</h1>
+            ))}
+         
         </a>
       </header>
     </div>
